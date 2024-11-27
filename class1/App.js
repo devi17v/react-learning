@@ -1,26 +1,29 @@
-/*
-<div id = "parent1">
-    <div id = "child">
-        <h1>I am a first one</h1>
-        <h2>I am a second one</h2>
-    <div>
-    <div id = "child2">
-        <h1>I am aaaaaa fisr one</h1>
-        <h2>I am aaaaaa second one</h2>
-    </div>
-</div>
-*/
+import React from "react";
+import { createRoot } from "react-dom/client";
 
-const parent = React.createElement("div", { id: "parent1" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "I am a first one"),
-    React.createElement("h2", {}, "I am a second one"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I am a first one"),
-    React.createElement("h2", {}, "I am a second one"),
-  ]),
-]);
+const Title = function () {
+  return (
+    <h1 className="head" tabIndex="5">
+      Hello React using using JSX
+    </h1>
+  );
+};
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+const data = <h1>javascript variable</h1>; //JS
+
+const num = 100;
+
+const elem = <span>React elem</span>; //react element
+
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    {data}
+    {elem}
+    {num}
+    <h1 className="heading">React from functional component</h1>
+  </div>
+);
+
+const root = createRoot(document.getElementById("root"));
+root.render(<HeadingComponent />);
